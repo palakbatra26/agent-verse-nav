@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import AgentCard from '@/components/AgentCard';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Search, Plane, Presentation, Sparkles, TrendingUp, Code, FileText, Calculator, Brain, MessageCircle } from 'lucide-react';
 
 const Index = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const agents = [
     {
       id: 'travelly',
@@ -79,6 +81,11 @@ const Index = () => {
 
   const categories = ['All', 'Travel & Tourism', 'Business & Presentations', 'Development', 'Content & Writing', 'Education', 'Health & Wellness'];
 
+  // Filter agents based on selected category
+  const filteredAgents = selectedCategory === 'All' 
+    ? agents 
+    : agents.filter(agent => agent.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -136,9 +143,10 @@ const Index = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={category === 'All' ? 'default' : 'outline'}
+              variant={category === selectedCategory ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
+              onClick={() => setSelectedCategory(category)}
             >
               {category}
             </Button>
@@ -149,27 +157,46 @@ const Index = () => {
       {/* Agents Grid */}
       <div className="container mx-auto px-4 pb-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured AI Agents</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            {selectedCategory === 'All' ? 'Featured AI Agents' : `${selectedCategory} Agents`}
+          </h2>
           <p className="text-lg text-muted-foreground">
-            Handpicked AI specialists ready to assist with your specific needs
+            {selectedCategory === 'All' 
+              ? 'Handpicked AI specialists ready to assist with your specific needs'
+              : `Specialized AI agents for ${selectedCategory.toLowerCase()}`
+            }
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {agents.map((agent) => (
+          {filteredAgents.map((agent) => (
             <AgentCard key={agent.id} {...agent} />
           ))}
           
-          {/* Coming Soon Cards */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center text-center min-h-[300px]">
-            <div className="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-xl flex items-center justify-center mb-4">
-              <MessageCircle className="w-6 h-6 text-gray-500" />
+          {/* Coming Soon Cards - only show when "All" is selected */}
+          {selectedCategory === 'All' && (
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center text-center min-h-[300px]">
+              <div className="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-xl flex items-center justify-center mb-4">
+                <MessageCircle className="w-6 h-6 text-gray-500" />
+              </div>
+              <h3 className="font-semibold text-gray-600 dark:text-gray-300 mb-2">More Agents Coming Soon</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                We're building amazing new AI specialists
+              </p>
             </div>
-            <h3 className="font-semibold text-gray-600 dark:text-gray-300 mb-2">More Agents Coming Soon</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              We're building amazing new AI specialists
-            </p>
-          </div>
+          )}
+          
+          {/* Show message when no agents found for selected category */}
+          {filteredAgents.length === 0 && selectedCategory !== 'All' && (
+            <div className="col-span-full text-center py-12">
+              <h3 className="text-xl font-semibold text-muted-foreground mb-2">
+                No agents found for {selectedCategory}
+              </h3>
+              <p className="text-muted-foreground">
+                More agents coming soon for this category!
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
