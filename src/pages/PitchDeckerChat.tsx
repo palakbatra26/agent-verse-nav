@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import ChatInterface from '@/components/ChatInterface';
-import { PresentationChart, FileText, Download, Star } from 'lucide-react';
+import { Presentation, FileText, Download, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -53,7 +53,7 @@ const PitchDeckerChat = () => {
             <div className="container mx-auto">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <PresentationChart className="w-6 h-6" />
+                  <Presentation className="w-6 h-6" />
                 </div>
                 <div>
                   <h1 className="text-xl font-bold">PitchDecker AI</h1>
@@ -120,7 +120,7 @@ const PitchDeckerChat = () => {
 
           <div className="mt-6 p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
             <div className="flex items-center mb-2">
-              <PresentationChart className="w-4 h-4 mr-2 text-purple-500" />
+              <Presentation className="w-4 h-4 mr-2 text-purple-500" />
               <span className="text-sm font-medium">Pitch Tips</span>
             </div>
             <ul className="text-xs text-muted-foreground space-y-1">

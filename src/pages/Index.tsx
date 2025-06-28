@@ -5,7 +5,7 @@ import AgentCard from '@/components/AgentCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Search, Plane, PresentationChart, Sparkles, TrendingUp } from 'lucide-react';
+import { Search, Plane, Presentation, Sparkles, TrendingUp } from 'lucide-react';
 
 const Index = () => {
   const agents = [
@@ -29,7 +29,7 @@ const Index = () => {
       users: 8750,
       chatPath: '/pitchdecker-chat',
       gradient: 'bg-gradient-to-br from-purple-500 to-pink-500',
-      icon: <PresentationChart className="w-6 h-6 text-white" />
+      icon: <Presentation className="w-6 h-6 text-white" />
     }
   ];
 
