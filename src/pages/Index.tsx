@@ -5,7 +5,7 @@ import AgentCard from '@/components/AgentCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Search, Plane, Presentation, Sparkles, TrendingUp, Code, FileText, Calculator, Brain, MessageCircle } from 'lucide-react';
+import { Search, Plane, Presentation, Sparkles, TrendingUp, Code, FileText, Calculator, Brain, MessageCircle, Camera, Music, Palette, Shield, Heart, Briefcase, Zap, Globe, Lightbulb, BookOpen } from 'lucide-react';
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -76,10 +76,120 @@ const Index = () => {
       chatPath: '/mindcoach-chat',
       gradient: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       icon: <Brain className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'photocraft',
+      name: 'PhotoCraft AI',
+      description: 'Professional photo editing and enhancement AI. Remove backgrounds, adjust lighting, apply filters, and create stunning visuals.',
+      category: 'Creative & Design',
+      rating: 4.7,
+      users: 11240,
+      chatPath: '/photocraft-chat',
+      gradient: 'bg-gradient-to-br from-rose-500 to-pink-600',
+      icon: <Camera className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'musicmuse',
+      name: 'MusicMuse AI',
+      description: 'Compose melodies, write lyrics, analyze songs, and get music theory guidance. Perfect for musicians and music enthusiasts.',
+      category: 'Creative & Design',
+      rating: 4.6,
+      users: 5890,
+      chatPath: '/musicmuse-chat',
+      gradient: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      icon: <Music className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'designstudio',
+      name: 'DesignStudio AI',
+      description: 'Create logos, posters, social media graphics, and brand materials. Get design suggestions and color palette recommendations.',
+      category: 'Creative & Design',
+      rating: 4.8,
+      users: 9320,
+      chatPath: '/designstudio-chat',
+      gradient: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      icon: <Palette className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'cybersentry',
+      name: 'CyberSentry AI',
+      description: 'Cybersecurity expert providing threat analysis, security audits, password management, and protection strategies for businesses.',
+      category: 'Security & Privacy',
+      rating: 4.9,
+      users: 4560,
+      chatPath: '/cybersentry-chat',
+      gradient: 'bg-gradient-to-br from-red-600 to-rose-700',
+      icon: <Shield className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'fitnesspal',
+      name: 'FitnessPal AI',
+      description: 'Personal trainer and nutrition coach creating custom workout plans, meal suggestions, and tracking your fitness journey.',
+      category: 'Health & Wellness',
+      rating: 4.7,
+      users: 13750,
+      chatPath: '/fitnesspal-chat',
+      gradient: 'bg-gradient-to-br from-lime-500 to-green-600',
+      icon: <Heart className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'bizstrategist',
+      name: 'BizStrategist AI',
+      description: 'Business consultant for startups and enterprises. Market analysis, business plans, financial modeling, and growth strategies.',
+      category: 'Business & Presentations',
+      rating: 4.8,
+      users: 6840,
+      chatPath: '/bizstrategist-chat',
+      gradient: 'bg-gradient-to-br from-slate-600 to-gray-700',
+      icon: <Briefcase className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'automateflow',
+      name: 'AutomateFlow AI',
+      description: 'Workflow automation specialist helping streamline processes, integrate tools, and boost productivity through smart automation.',
+      category: 'Productivity',
+      rating: 4.6,
+      users: 8920,
+      chatPath: '/automateflow-chat',
+      gradient: 'bg-gradient-to-br from-cyan-600 to-blue-700',
+      icon: <Zap className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'linguabridge',
+      name: 'LinguaBridge AI',
+      description: 'Master new languages with personalized lessons, conversation practice, grammar explanations, and cultural insights.',
+      category: 'Education',
+      rating: 4.7,
+      users: 10480,
+      chatPath: '/linguabridge-chat',
+      gradient: 'bg-gradient-to-br from-emerald-600 to-teal-700',
+      icon: <Globe className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'innovatethink',
+      name: 'InnovateThink AI',
+      description: 'Innovation catalyst for brainstorming sessions, problem-solving, creative thinking, and turning ideas into actionable plans.',
+      category: 'Productivity',
+      rating: 4.5,
+      users: 5670,
+      chatPath: '/innovatethink-chat',
+      gradient: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      icon: <Lightbulb className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'studybuddy',
+      name: 'StudyBuddy AI',
+      description: 'Academic companion for students providing study schedules, exam preparation, research assistance, and learning strategies.',
+      category: 'Education',
+      rating: 4.8,
+      users: 16890,
+      chatPath: '/studybuddy-chat',
+      gradient: 'bg-gradient-to-br from-blue-600 to-indigo-700',
+      icon: <BookOpen className="w-6 h-6 text-white" />
     }
   ];
 
-  const categories = ['All', 'Travel & Tourism', 'Business & Presentations', 'Development', 'Content & Writing', 'Education', 'Health & Wellness'];
+  const categories = ['All', 'Travel & Tourism', 'Business & Presentations', 'Development', 'Content & Writing', 'Education', 'Health & Wellness', 'Creative & Design', 'Security & Privacy', 'Productivity'];
 
   // Filter agents based on selected category
   const filteredAgents = selectedCategory === 'All' 
@@ -126,11 +236,11 @@ const Index = () => {
             <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <TrendingUp className="w-4 h-4 text-green-500" />
-                <span>50K+ Active Users</span>
+                <span>150K+ Active Users</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-4 h-4 text-blue-500" />
-                <span>6 Specialized Agents</span>
+                <span>16 Specialized Agents</span>
               </div>
             </div>
           </div>
