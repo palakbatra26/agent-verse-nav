@@ -5,7 +5,7 @@ import AgentCard from '@/components/AgentCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Search, Plane, Presentation, Sparkles, TrendingUp } from 'lucide-react';
+import { Search, Plane, Presentation, Sparkles, TrendingUp, Code, FileText, Calculator, Brain, MessageCircle } from 'lucide-react';
 
 const Index = () => {
   const agents = [
@@ -30,10 +30,54 @@ const Index = () => {
       chatPath: '/pitchdecker-chat',
       gradient: 'bg-gradient-to-br from-purple-500 to-pink-500',
       icon: <Presentation className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'codemaster',
+      name: 'CodeMaster AI',
+      description: 'Your programming companion that helps debug code, explains algorithms, reviews pull requests, and generates optimized solutions.',
+      category: 'Development',
+      rating: 4.7,
+      users: 12300,
+      chatPath: '/codemaster-chat',
+      gradient: 'bg-gradient-to-br from-green-500 to-emerald-500',
+      icon: <Code className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'writegenius',
+      name: 'WriteGenius AI',
+      description: 'Professional writing assistant for blogs, emails, reports, and creative content. Perfect grammar, engaging tone, SEO optimization.',
+      category: 'Content & Writing',
+      rating: 4.6,
+      users: 9850,
+      chatPath: '/writegenius-chat',
+      gradient: 'bg-gradient-to-br from-orange-500 to-red-500',
+      icon: <FileText className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'mathsolver',
+      name: 'MathSolver AI',
+      description: 'Advanced mathematics assistant for calculus, algebra, statistics, and complex problem solving with step-by-step explanations.',
+      category: 'Education',
+      rating: 4.8,
+      users: 7640,
+      chatPath: '/mathsolver-chat',
+      gradient: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      icon: <Calculator className="w-6 h-6 text-white" />
+    },
+    {
+      id: 'mindcoach',
+      name: 'MindCoach AI',
+      description: 'Personal wellness and productivity coach providing mindfulness techniques, goal setting, and mental health support.',
+      category: 'Health & Wellness',
+      rating: 4.5,
+      users: 6120,
+      chatPath: '/mindcoach-chat',
+      gradient: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      icon: <Brain className="w-6 h-6 text-white" />
     }
   ];
 
-  const categories = ['All', 'Travel & Tourism', 'Business & Presentations', 'Productivity', 'Creative'];
+  const categories = ['All', 'Travel & Tourism', 'Business & Presentations', 'Development', 'Content & Writing', 'Education', 'Health & Wellness'];
 
   return (
     <div className="min-h-screen bg-background">
@@ -75,11 +119,11 @@ const Index = () => {
             <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <TrendingUp className="w-4 h-4 text-green-500" />
-                <span>24K+ Active Users</span>
+                <span>50K+ Active Users</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-4 h-4 text-blue-500" />
-                <span>2 Specialized Agents</span>
+                <span>6 Specialized Agents</span>
               </div>
             </div>
           </div>
@@ -119,7 +163,7 @@ const Index = () => {
           {/* Coming Soon Cards */}
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center text-center min-h-[300px]">
             <div className="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-xl flex items-center justify-center mb-4">
-              <Sparkles className="w-6 h-6 text-gray-500" />
+              <MessageCircle className="w-6 h-6 text-gray-500" />
             </div>
             <h3 className="font-semibold text-gray-600 dark:text-gray-300 mb-2">More Agents Coming Soon</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">

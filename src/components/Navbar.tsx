@@ -34,6 +34,16 @@ const Navbar = () => {
                   Marketplace
                 </Button>
               </Link>
+              <Link to="/about">
+                <Button variant={location.pathname === '/about' ? 'default' : 'ghost'} size="sm">
+                  About
+                </Button>
+              </Link>
+              <Link to="/pricing">
+                <Button variant={location.pathname === '/pricing' ? 'default' : 'ghost'} size="sm">
+                  Pricing
+                </Button>
+              </Link>
             </div>
 
             {currentAgent && (
