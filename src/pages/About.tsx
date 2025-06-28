@@ -41,13 +41,13 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">
               <Globe className="w-4 h-4 mr-2" />
-              About AgentVerse
+              About palakAgentVerse
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
               Revolutionizing AI Interaction
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              AgentVerse is the world's first AI agent marketplace, connecting users with specialized 
+              palakAgentVerse is the world's first AI agent marketplace, connecting users with specialized 
               artificial intelligence assistants designed to enhance productivity, creativity, and problem-solving.
             </p>
           </div>
@@ -89,7 +89,7 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2024, AgentVerse emerged from a simple observation: while AI technology 
+                  Founded in 2024, palakAgentVerse emerged from a simple observation: while AI technology 
                   was advancing rapidly, most users struggled to find specialized AI tools for their 
                   specific needs.
                 </p>
@@ -99,7 +99,7 @@ const About = () => {
                   benefit from purpose-built AI agents.
                 </p>
                 <p>
-                  Today, AgentVerse hosts a growing ecosystem of AI agents, each designed to excel 
+                  Today, palakAgentVerse hosts a growing ecosystem of AI agents, each designed to excel 
                   in specific domains - from travel planning to business presentations, coding 
                   assistance to creative writing.
                 </p>
